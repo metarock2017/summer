@@ -1,0 +1,25 @@
+<!DOCTYPE html>
+    <head>
+        <title>worker</title>
+        <meta http-equiv="Content-Type" content="text/html; charset=utf-8"/>
+        <script>
+
+           
+            function init(){
+                var result = document.getElementById('result');
+                
+                var worker = new Worker('worker.js');
+            
+                worker.onmessage = function(event){
+                    result.innerHTML += event.data + '<br><br>';
+                }
+            }
+
+
+       
+        </script>
+    </head>
+    <body onload = "init()">
+        <div id="result"></div>
+    </body>
+</html>
