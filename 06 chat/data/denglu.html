@@ -1,0 +1,248 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <meta charset="utf-8">
+        <title>聊天室-与世界分享你的知识、经验和见解</title>
+        <link href="./css/denglu.css" rel="stylesheet" type="text/css">
+    </head>
+    <body>
+    <div class="contain">
+        <div class="contain-1">
+	        <div class="head">
+	            <ul>
+	            	<li class="te1">千行聊天室</li>
+	            	<li class="te2">千行聊天，拉近你我的距离</li>
+	            </ul>
+	            <ul class="xuanzhe">
+	            	<li><a href="#signup" onclick="zhuche()" class="zhuche"><span id="xz_zc">注册</span></a></li>
+	            	<li><a href="#signin" onclick="denglu()" class="denglu"><span  id="xz_dl">登录</span></a></li>
+	            	<span id="na1" class="na1"></span>
+	            	
+	            </ul>
+	            <ul class="input1" id="input1">
+	            	<form action="../src/signup/signup.php" method="post" onsubmit="return checkForm()"> 
+	 	            	<li>
+	 	            	    <input type="text" id="name" onblur="onblurName()" value="" name="name" placeholder="姓名">
+	 	            	    <span class="" id="s_name"></span>
+	 	            	</li>
+	 	            	<li class="te3">
+			            	<input type="text" id="tel" onblur="onblurTel()" name="phone" placeholder="手机号(仅支持中国大陆)">
+			            	<span class="" id="s_tel"></span>
+		            	</li>
+		            	<li class="te4">
+			            	<input type="password" id="pwd" onblur="onblurPwd()" name="password" placeholder="密码(不少于6位)">
+			            	<span class="" id="s_pwd"></span>
+		            	</li>
+		            	<li class="te5" id="te5" >
+		            	    <input type="text" id="check" onblur="onblurCheck()" name="check" placeholder="验证码">
+		            	    <span class="" id="s_check"></span>
+		            	    <img class="imgck" title="看不清楚?换一张" src="./img/check.png">
+		            	</li>
+		            	<div class="pp">
+                                <li>
+                                    <input type="submit" id="wenzhi"  class="wenzhi" value="注册聊天室">
+                                </li>
+                        </div>
+                        <li class="te7" id="te7"><span>点击「注册」按钮，即代表你同意<a href="#" style="color:rgb(105,142,191);" target="_block">《聊天室协议》</a></span></li>
+		            </form>
+                    <li class="te8" id="te8"><a href="#" style="color:rgb(95,166,229);text-decoration:none;">下载聊天室App</a></li>
+	            </ul>
+
+	            <ul class="input2" id="input2">
+	                <form action="../src/signin/signin.php" method="post" onsubmit="return checkForm_dl()">
+	                    <li>
+	 	            	    <input type="text" id="name2" onblur="onblurName2()" value="" name="phone2" placeholder="手机号或邮箱">
+	 	            	    <span class="" id="s_name2"></span>
+	 	            	</li>
+	 	            	<li class="pwd">
+			            	<input type="password" onblur="onblurPwd2()" id="pwd2" name="psw" placeholder="密码">
+			            	<span class="" id="s_pwd2"></span>
+			            </li>
+			            <li class="code">
+			                <p>请点击图片中所有倒立的文字</p>
+			                <img class="refresh" src="./img/refresh.png">
+			                <img class="code-img" src="./img/code.png">
+			            </li>
+			            <li>
+			                <input class="sign" type="submit" value="登录">
+			            </li>
+			            <div class="other-way">
+			                <p class="diff1">手机验证码登录</p>
+			                <p class="diff2">无法登录?</p>
+			                <p class="diff3">社交账号登录</p>
+			            </div>
+			        </form>
+			        <div class="download"><li class="te8" id="te8"><a href="#" style="color:rgb(95,166,229);text-decoration:none;">下载聊天室App</a></li></div>
+			    </ul>
+            </div>
+	    </div>
+	    <div class="bottom">
+	        <div class="bottom-first">
+	            <span style="color:rgb(174,189,201);">&copy; 2017 聊天室</span>
+	        	<span style="color:rgb(174,189,201);" class="dot">·</span>
+	        	<a style="color:rgb(174,189,201);" target="_blank" href="#">聊天室圆桌</a>
+	        	<span style="color:rgb(174,189,201);" class="dot">·</span>
+	        	<a style="color:rgb(174,189,201);" target="_blank" href="#">发现</a>
+	        	<span style="color:rgb(174,189,201);" class="dot">·</span>
+	        	<a style="color:rgb(174,189,201);" target="_blank" href="#">使用机构账户登录</a>
+	            <span style="color:rgb(174,189,201);" class="dot">·</span>
+	        	<a style="color:rgb(174,189,201);" target="_blank" href="#">联系我们</a>
+	        	<span style="color:rgb(174,189,201);" class="dot">·</span>
+                <a style="color:rgb(174,189,201);" target="_blank" href="../src/adminSignin/signin.php">管理员登录</a>
+	        </div>
+	    </div>
+    </div>
+    <script type="text/javascript">
+        function $(id){
+        	return document.getElementById(id);
+        }
+        function zhuche(){
+            var input1 = $("input1");
+            var input2 = $("input2");
+            var na1 = $("na1");
+            var xz_zc = $("xz_zc");
+            var xz_dl = $("xz_dl");
+            input1.style.display = "block";
+            input2.style.display = "none";
+            xz_zc.style.color = "rgb(17,137,235)";
+            xz_dl.style.color = "rgb(153,154,155)";
+            na1.className = "na1";
+        }
+        function denglu(){
+            var input1 = $("input1");
+            var input2 = $("input2");
+            var na1 = $("na1");
+            var xz_dl = $("xz_dl");
+            var xz_zc = $("xz_zc");
+            na1.className = "na2";
+            xz_dl.style.color = "rgb(17,137,235)";
+            xz_zc.style.color = "rgb(153,154,155)";
+            input1.style.display = "none";
+            input2.style.display = "block";
+        }
+        function checkForm(){
+        	if(!onblurName()){
+        		return false;
+        	}else if(!onblurTel()){
+        		return false;
+        	}else if(!onblurPwd()){
+                return false;
+        	}else if(!onblurCheck()){
+                return false;
+        	}else{
+        		return true;
+        	}
+        }
+        var te5 = $("te5");
+        te5.style.display = "none";
+        function onblurName(){
+        	var span = $("s_name");
+        	var name = $("name");
+        	var te5 = $("te5");
+        	var wenzhi = $("wenzhi");
+        	var te7 = $("te7");
+        	var te8 = $("te8");
+        	if(name.value == ""){
+        		span.innerHTML = "请输入姓名！";
+                span.className = "msg2";
+                return false;
+        	}else{
+        		span.innerHTML = "<img src='./img/true.png'>";
+                span.className = "msg";
+                te5.style.display = "block";
+                wenzhi.style.top = "-172px";
+                te7.style.top = "-142px";
+                te8.style.top = "-155px";
+                return true;
+        	}
+        }
+        function onblurTel(){
+        	var tel = $("tel");
+        	var span = $("s_tel");
+        	if(tel.value == ""){
+        		span.innerHTML = "请输入手机号！";
+                span.className = "msg2";
+                return false;
+            }else if(!(tel.value.length == "11")){
+        		span.innerHTML = "手机号格式不正确！";
+                span.className = "msg2";
+            }else{
+            	span.innerHTML = "<img src='./img/true.png'>";
+                span.className = "msg";
+                return true;
+            }
+        }
+    	function onblurPwd(){
+    		var pwd = $("pwd");
+    		var span = $("s_pwd");
+    		if(pwd.value == ""){
+    			span.innerHTML = "密码不能为空！";
+                span.className = "msg2";
+                return false;
+    		}else if(pwd.value.length < 6){
+                span.innerHTML = "密码位数必须大于6位！";
+                span.className = "msg2";
+                return false;
+    		}else{
+    			span.innerHTML = "<img src='./img/true.png'>";
+                span.className = "msg";
+                return true;
+    		}
+    	}
+    	function onblurCheck(){
+    		var check = $("check");
+            var span = $("s_check");
+            if(check.value == ""){
+            	span.innerHTML = "验证码不能为空！";
+                span.className = "msg2";
+                return false;
+            }else if(!(check.value == "TK5S")){
+            	span.innerHTML = "验证码错误！";
+                span.className = "msg2";
+                return false;
+            }else{
+            	span.innerHTML = "<img src='./img/true.png'>";
+                span.className = "msg";
+                return true;
+            }
+    	}
+        function checkForm_dl(){
+    		var name2 = $("name2");
+    		var pwd2 = $("pwd2");
+            if(!onblurPwd2()){
+                return false;
+            }else if(!onblurPwd2()){
+            	return false;
+            }else{
+                return true;
+            }
+
+        }
+    	function onblurName2(){
+    		var name2 = $("name2");
+    		var span = $("s_name2");
+    		if(name2.value == ""){
+    			span.className = "msg2";
+    			span.innerHTML = "请输入邮箱或手机号！";
+    			return false;
+    		}else{
+    			span.style.display = "none";
+    			return true;
+    		}
+    	}
+    	function onblurPwd2(){
+    		var pwd2 = $("pwd2");
+    		var span = $("s_pwd2");
+    		if(pwd2.value == ""){
+    			span.className = "msg2";
+    			span.innerHTML = "请输入密码！";
+    		    span.style.top = "-103px";
+    			return false;
+    		}else{
+                span.style.display = "none";
+    			return true;
+    		}
+    	}
+    </script> 
+    </body>
+</html>

@@ -1,0 +1,49 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <meta charset="utf-8">
+        <title></title>
+        <style type="text/css">
+            body{
+                font-family:华文新魏;
+                background-image:url('../../data/img/5.png');
+            }
+            .contain{
+                width:1100px;
+                height:500px;
+                margin:150px auto;
+            }
+            .contain{
+                font-size:90px;
+                font-weight:700;
+            }
+            .contain p{
+                text-align:center;
+            }
+        </style>
+        <script type="text/javascript">
+        </script>
+    </head>
+    <body>
+        <div class="contain">
+            <p>恭喜你,登录成功！</p>
+            <p><span id="count">5</span>秒后跳转到后台管理页面</p>
+        </div>
+        
+        <script type="text/javascript">
+            var timer_value = document.getElementById("count");
+            var count_value = 0; 
+            function timer(){
+                count_value = timer_value.innerHTML;
+                count_value = parseFloat(count_value);
+                count_value -= 1;
+                timer_value.innerHTML = count_value;
+                if(count_value == 0){
+                    clearInterval(i); 
+                    window.open("../adminIndex/index.php","_self")
+                }
+            }
+            var i = setInterval("timer()",1000);
+        </script>
+    </body>
+</html>
