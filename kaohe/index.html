@@ -1,0 +1,119 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <meta charset="utf-8">
+        <meta name="viewport" content="width=device-width,initial-scale=1.0,maximum-scale=1.0,user-scalable=0,minimum-scale=1.0">
+        <title></title>
+        <script src="js/jquery-min.js" type="text/javascript"></script>
+        <link href="css/index.css" rel="stylesheet" type="text/css"></link>
+        <script type="text/javascript">
+            /*将页面分为10rem*/
+            document.getElementsByTagName("html")[0].style.fontSize = document.documentElement.clientWidth/10 + "px";
+        </script>
+
+    </head>
+    
+    <body> 
+        <div class="contain">
+            <div class="top">
+                <div class="top_cqtq">重庆天气</div>
+                <div class="top_local">对比本地天气></div>
+                <div class="top_up_time">5分钟前更新</div>
+                <div class="top_tianqi">多云</div>
+                <div class="top_weather">
+                    <div class="top_font">36</div>
+                    <div class="top_du">。</div>
+                    <div class="top_mess1">25~26</div>
+                    <div class="top_mess2">东南风 2级 湿度0%</div>
+                    <div class="top_du2">。</div>
+                </div>
+                <div class="top_time">
+                    <div class="top_time_ifo">08月26日 星期六 农历七月初五</div>
+                    <div class="top_time_24">24小时天气</div>
+                    <div class="top_time_kq">28 优</div>
+                </div>
+            </div>
+            
+
+
+
+
+            <div class="center">
+                <ul>
+                    <li>
+                        <div class="li_top">昨天</div>
+                        <div class="li_center iconfont">&#xe607;</div>
+                        <div class="li_bottom">多云</div>
+                    </li>
+                    <li>
+                        <div class="li_top">星期六</div>
+                        <div class="li_center iconfont">&#xe603;</div>
+                        <div class="li_bottom">暴雨</div>
+                    </li>
+                    <li>
+                        <div class="li_top">星期日</div>
+                        <div class="li_center iconfont">&#xe881;</div>
+                        <div class="li_bottom">冰雹</div>
+                    </li>
+                    <li>
+                        <div class="li_top">星期一</div>
+                        <div class="li_center iconfont">&#xe63e;</div>
+                        <div class="li_bottom">沙尘暴</div>
+                    </li>
+                    <li>
+                        <div class="li_top">星期二</div>
+                        <div class="li_center iconfont">&#xe613;</div>
+                        <div class="li_bottom">台风</div>
+                    </li>
+                    <li>
+                        <div class="li_top">星期三</div>
+                        <div class="li_center iconfont">&#xe6fb;</div>
+                        <div class="li_bottom">雾霾</div>
+                    </li>
+                </ul>
+
+                <div class="canvas"></div>
+            </div>
+            <div class="bottom"></div>
+        </div>
+    </body>
+    
+
+
+
+    <script src="js/index.js" type="text/javascript"></script>
+  
+</html>
+
+
+
+
+
+<!-- $.ajax({
+            url: 'http://hongyan.cqupt.edu.cn/XZBBM/index.php/api/search/tag/',
+            data: {},
+            method: 'GET',
+            success: function(data) {
+                all = data;
+                for(var i=0;i < data.length;i++){
+                    for(var j = 0;j < all[i].tag.length;j++){
+                        if(all[i].tag[j] == "学习"){
+                        stu.push(all[i]);
+                        }else if(all[i].tag[j] == "生活"){
+                            lif.push(all[i]);
+                        }else if(all[i].tag[j] == "活动"){
+                            act.push(all[i]);
+                        }else if(all[i].tag[j] == "组织"){
+                            org.push(all[i]);
+                        }else{
+                            oth.push(all[i]);
+                        }
+                    }
+                }
+                $('.help_nav li:first-child').click();
+                $('#help_page li:first-child').click();
+            },
+            fail: function() {
+                alert("您的网络异常，请重新加载！")
+            }
+        }) -->
